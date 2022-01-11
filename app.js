@@ -29,6 +29,12 @@ const createStream = () => {
     .addOption("-bufsize", "512k")
     .addOption("-pix_fmt", "yuv420p")
     .addOption("-f", "flv")
+    .on("start", (commandLine) => {
+      console.log("Query : ", commandLine);
+    })
+    .on("error", (err) => {
+      console.log("Error: " + err.message);
+    })
     .output(youtube + stramkey)
     .run();
 }
