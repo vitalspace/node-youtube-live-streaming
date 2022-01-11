@@ -4,14 +4,11 @@ const express = require('express');
 const ffmpeg = require('fluent-ffmpeg');
 
 const app = express();
-
-const youtube = 'rtmp://a.rtmp.youtube.com/live2/';
-const stramkey = 'your-stream-key';
-
 const PORT = 5000;
 
 const createStream = () => {
-
+  const youtube = 'rtmp://a.rtmp.youtube.com/live2/';
+  const stramkey = 'your-stream-key';
   const src = path.join(__dirname, "./video.mp4")
   const VBR="1500k"
   const FPS="30"
